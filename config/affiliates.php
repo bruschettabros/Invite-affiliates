@@ -1,11 +1,5 @@
 <?php
 
-/*
-* This is where you can define the URL of the affiliates file.
- * The default is a gist I created with the affiliates.txt file.
- * You can change this to any URL or path within the .env file
-*/
-
 return [
     /*
      * When defining a file, the format is each affiliate on a new line, as a json object containing:
@@ -30,6 +24,10 @@ return [
         100
     ),
 
+    /*
+    * The unit to use when calculating the distance between the user and the affiliates.
+    * currently only miles and km are supported.
+    */
     'unit' => env(
         'DEFAULT_UNIT',
         'km'

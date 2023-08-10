@@ -7,7 +7,7 @@ The JSON-encoded affiliates.txt file attached contains a shortlist of affiliate 
 
 We want to invite any affiliate that lives within 100km of our Dublin office for some food and drinks using this text file as the input (without being altered).
 
-##Task
+## Task
 Write a program that will read the full list of affiliates from this txt file and output the name and IDs of matching affiliates within 100km, sorted by Affiliate ID (ascending).
 
 You can use the first formula from this [Wikipedia article](https://en.wikipedia.org/wiki/Great-circle_distance) to calculate distance. Don't forget, you'll need to convert degrees to radians.
@@ -24,3 +24,21 @@ Please don’t forget, your code should be production ready, clean and tested!
 - Basic HTML output
 - Usage of a PHP Framework (We're a Laravel based company so bonus points for using that)
 - Use the original txt file as input 
+
+## Preview
+
+![img.png](img.png "Preview")
+
+## Installation
+- Clone the repository
+- Run `composer install`
+- Run `sail up -d`
+- Run `sail artisan migrate`
+- Run `sail artisan db:seed` _The seed command will use the affiliate file to seed the DB_
+- Run `sail npm install`
+- Run `sail npm run dev`
+
+## Usage
+- You can configure the distance from the office in the `.env` file based on the params in `config/affiliates.php`
+- You change the coordinates of the office using the web interface
+- Tests can be ran with `sail artisan test` and `sail npm run test`
