@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import LatLonPicker from './LatLonPicker.jsx';
 import AffiliatesTable from './AffiliatesTable.jsx';
+import LoadingCard from './LoadingCard.jsx';
 
 const InviteAffiliatesMain = () => {
     // Dublin office location as default
@@ -32,10 +33,7 @@ const InviteAffiliatesMain = () => {
                         <div className="card-header">Invite Affiliates</div>
                         <div className="container">
                             <div className="row justify-content-lg-start my-3">
-                                {loading
-                                    ? <div className="spinner-border" role="status">
-                                        <span className="sr-only"></span>
-                                    </div>
+                                {loading ? <LoadingCard title={"Affiliates Within distance"}/>
                                     : <AffiliatesTable affiliates={affiliates} />
                                 }
                                 <LatLonPicker
