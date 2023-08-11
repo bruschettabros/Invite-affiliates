@@ -15,7 +15,7 @@ class affiliatesController extends Controller
         $location = new Location($request->lat, $request->lon);
 
         return AffiliateResource::collection(Affiliate::all()->filter(function (Affiliate $affiliate) use ($location) {
-            return  $location->distance(new Location($affiliate->lat, $affiliate->lon)) <= config('affiliates.distance');
+            return $location->distance(new Location($affiliate->lat, $affiliate->lon)) <= config('affiliates.distance');
         }));
     }
 }
